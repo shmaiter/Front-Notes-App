@@ -1,0 +1,343 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+html {
+    font-family: "Montserrat", sans-serif;
+}
+body {
+    background: #eee;
+    background-image: url("https:www.transparenttextures.com/patterns/arabesque.png");
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5ba13;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1,
+#dashboard h2 {
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 600;
+}
+header a {
+    text-decoration: none;
+}
+
+/* #simpleModal {
+    display: block !important;
+} */
+
+.simpleModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    margin: 10% auto;
+    width: 60% !important;
+    padding: 20px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+}
+
+.modalBtns {
+    display: flex;
+    justify-content: center;
+}
+
+.modalBtn {
+    padding: 8px 100px;
+    margin: 10px;
+}
+
+.no:hover {
+    background-color: rgba(0, 149, 0, 0.662);
+}
+.yes:hover {
+    background-color: #ee4a2d;
+}
+
+footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+
+footer p {
+    color: rgb(61, 61, 61);
+}
+
+#dashboard {
+    text-align: center;
+}
+
+#dashboard h2 {
+    margin: 5rem;
+    color: rgb(175, 175, 175);
+}
+#dashboard .notes-container {
+    margin: 0 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-auto-rows: min-content; */
+    gap: 13px;
+}
+
+.note {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    min-width: 300px;
+    float: left;
+    padding: 10px;
+    position: relative;
+    text-align: left;
+}
+
+.note h1 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+.note p {
+    font-size: 1.1em;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.note .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.note button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.closeBtn {
+    color: rgb(194, 194, 194);
+    font-size: 28px;
+    position: absolute;
+    top: 0;
+    right: 8px;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: #ee4a2d;
+}
+
+.note .datetime {
+    margin-left: 15px;
+    font-size: medium;
+    line-height: 0;
+    font-style: italic;
+    font-weight: normal;
+    color: hsl(0, 0%, 64%);
+}
+
+.public {
+    margin: 50px 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 25px;
+}
+
+.public .note {
+    background: rgb(255, 252, 57);
+    padding: 30px;
+    font-size: 2rem;
+    min-width: 500px;
+    /* margin: 20px; */
+}
+
+form.create-note {
+    position: relative;
+    width: 50%;
+    margin: 30px auto 20px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+form.create-note input,
+form.create-note textarea {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+}
+form.create-note button {
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background: #f5ba13;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    form.create-note {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    form.create-note {
+        width: 100%;
+    }
+    #dashboard .notes-container {
+        margin: 0 8px;
+        gap: 8px;
+    }
+}
+
+/* SIGN UP */
+header button {
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #ffc31e;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+header button:hover {
+    background-color: #ffd666;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.685);
+}
+
+.regContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem 0.5rem;
+}
+
+.regContainer section {
+    margin-top: 5%;
+    width: 100%;
+    max-width: 420px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.regContainer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+.regContainer a,
+.regContainer a:visited {
+    color: #fff;
+}
+
+.regContainer input[type="text"],
+.regContainer input[type="password"],
+.regContainer button,
+.regContainer textarea {
+    font-family: "Nunito", sans-serif;
+    font-size: 22px;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.regContainer label,
+.regContainer button {
+    margin-top: 1rem;
+}
+
+.regContainer button {
+    padding: 0.5rem;
+}
+
+.regContainer .instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.regContainer .instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.regContainer .offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.regContainer .hide {
+    display: none;
+}
+
+.regContainer .valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.regContainer .invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.regContainer .errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.regContainer .line {
+    display: inline-block;
+}
